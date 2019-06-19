@@ -1,6 +1,7 @@
 # afl-dyninst - AFL + Dyninst for fuzzing blackbox binary
 
 This tool is actually forked from [afl-dyninst](https://github.com/vanhauser-thc/afl-dyninst). Many thanks to vanhauser-thc and talos-vulndev.
+
 I just modified it to fit my own.
 
 ## Prerequisites
@@ -15,7 +16,10 @@ Get the Dyninst 10 release [source](https://github.com/dyninst/dyninst/releases/
 
 ## Building
 
+Modify CMakeLists.txt. Reset `DYNINST_ROOT`, `DYNINST_BUILD` and `AFL_ROOT` to fit your environment.
+
 Use cmake and ninja:
+
 ```shell
 $ mkdir build && cd build
 $ CC=gcc CXX=g++ cmake -G Ninja ..
@@ -34,4 +38,7 @@ $ afl-fuzz -i in -o out -- [INSTRUMENTED]
 
 ## Example
 
-
+```shell
+$ chmod +x example.sh
+$ ./example.sh
+```
