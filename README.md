@@ -1,6 +1,6 @@
 # afl-dyninst - AFL + Dyninst for fuzzing blackbox binary
 
-This tool is actually forked from [afl-dyninst](https://github.com/vanhauser-thc/afl-dyninst). Many thanks to vanhauser-thc and talos-vulndev.
+This tool is actually forked from [afl-dyninst](https://github.com/vanhauser-thc/afl-dyninst). Many thanks to **vanhauser-thc** and **talos-vulndev**.
 
 I just modified it to fit my own.
 
@@ -12,7 +12,7 @@ Get [AFL 2.52b](http://lcamtuf.coredump.cx/afl/) or [AFL plusplus](https://githu
 
 - Dyninst 10
 
-Get the Dyninst 10 release [source](https://github.com/dyninst/dyninst/releases/tag/v10.1.0), build and install.
+Get [Dyninst 10](https://github.com/dyninst/dyninst/releases/tag/v10.1.0), build and install.
 
 ## Building
 
