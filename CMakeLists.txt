@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(afl-dyn)
+project(afl-dyninst)
 
 ### Need to be Set
-set(DYNINST_ROOT "/usr/local/lib")
+set(DYNINST_ROOT "/usr/local")
 set(DYNINST_BUILD "/home/vigi/dyninst-10.1.0/build")
 set(DYNINST_VER10 ON)
 set(AFL_ROOT "/home/vigi/afl-2.52b")
@@ -30,7 +30,6 @@ endif()
 include_directories(${AFL_ROOT})
 include_directories(${DYNINST_ROOT}/include)
 link_directories(${DYNINST_ROOT}/lib)
-set(DYNINST_FLAGS "-ldyninstAPI -lboost_system")
 set(AFL_STUB_FLAGS "-fpic")
 
 add_library(afl-stub SHARED afl-stub.cc)
@@ -42,6 +41,4 @@ set_property(TARGET afl-stub
 add_executable(afl-dyninst afl-dyninst.cc)
 target_compile_options(afl-dyninst
                        PRIVATE ${DYNINST_OPT})
-set_property(TARGET afl-dyninst
-             PROPERTY LINK_FLAGS ${DYNINST_FLAGS})
-
+target_link_libraries(afl-dyninst dyninstAPI boost_system)
